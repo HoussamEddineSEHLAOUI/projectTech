@@ -1,4 +1,4 @@
-import { StatusBar } from 'expo-status-bar';
+import React, { Component } from 'react';
 import { StyleSheet, Text, View ,FlatList ,Image} from 'react-native';
 import Application from '../components/Application';
 import {Display} from '../utils';
@@ -45,11 +45,6 @@ export default function ApplicationScreen() {
     <View style={styles.container}>
         {/* header */}
 
-        <View style={styles.header}>
-            <Image  source={require('../assets/images/shield.png')} style={styles.icon} /> 
-            <Text style={styles.title}>Applications </Text>
-        </View>
-
         {/* menu*/}
         <View style={styles.menu}>
             <View style={styles.panelApp}>
@@ -93,7 +88,10 @@ export default function ApplicationScreen() {
       <FlatList
         data={Data}
         style={styles.flatList}
-        ListHeaderComponent={()=>
+          
+        showsVerticalScrollIndicator={false}
+        showsHorizontalScrollIndicator={false}
+            ListHeaderComponent={()=>
             <View style={styles.tablHeader}>
                 <Text style={styles.titletab}>Application</Text>
                 <Text style={styles.status}>Status</Text>
@@ -102,6 +100,7 @@ export default function ApplicationScreen() {
         }
         renderItem={ ({ item }) => (
           <Application 
+              key={item.id}
               title={item.title}
               etat={item.etat}
               number={item.number}
@@ -118,8 +117,8 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#dbdbdb',
-    marginTop:80 ,
-    alignItems:'center'
+    alignItems:'center' ,
+    paddingTop :10
   },
   header :{
     backgroundColor :'red',

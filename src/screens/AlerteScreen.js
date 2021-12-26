@@ -1,12 +1,15 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View ,ScrollView ,Image} from 'react-native';
+import React, { Component } from 'react';
+import { StyleSheet, Text, View ,ScrollView ,Image ,Dimensions} from 'react-native';
 import Alerte from '../components/Alerte';
 
 
 
 export default function AlerteScreen() {
   return (
-    <ScrollView style={styles.container}>
+    <ScrollView style={styles.container} 
+    showsVerticalScrollIndicator={false}
+    showsHorizontalScrollIndicator={false}>
       <View style={styles.headerpanel}>
         <View style={styles.header}>
               <Image  source={require('../assets/images/error.png')} style={styles.icon} /> 
@@ -45,8 +48,9 @@ export default function AlerteScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#dbdbdb',
-    marginTop:40
+    backgroundColor: '#dbdbdb' ,
+    overflow:'hidden',
+    width:Dimensions.get('window').width
   },
   headerpanel:{
     width :'95%',

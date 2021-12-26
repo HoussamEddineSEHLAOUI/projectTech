@@ -1,12 +1,14 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View  ,Image ,ScrollView} from 'react-native';
+import React, { Component } from 'react';
+import { StyleSheet, Text, View  ,Image ,ScrollView , Dimensions} from 'react-native';
 import Apm from '../components/Apm';
 
 
 
 export default function ApmScreen() {
   return (
-    <ScrollView style={styles.container}>
+    <ScrollView style={styles.container}  
+      showsVerticalScrollIndicator={false}
+      showsHorizontalScrollIndicator={false}>
         <View style={styles.header}>
             <Text style={styles.title}>Applications Performance Monitoring</Text>
         </View>
@@ -58,7 +60,10 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#fff',
-    marginTop :40
+    paddingTop :30,
+    overflow:'hidden',
+    width:Dimensions.get('window').width
+    
   },
   header :{
       flexDirection :'row' ,

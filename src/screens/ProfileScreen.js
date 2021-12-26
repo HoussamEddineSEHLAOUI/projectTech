@@ -1,4 +1,4 @@
-import { StatusBar } from 'expo-status-bar';
+import React, { Component } from 'react';
 import { StyleSheet, Text, View ,Image ,Dimensions , ScrollView } from 'react-native';
 import {Display} from '../utils';
 import {
@@ -41,8 +41,10 @@ const  barData = {
                 color: (opacity = 1) => `rgba(255, 255, 255, ${opacity})`,
                 style: {
                   borderRadius: 16,
-                }
+                },
+                borderRadius: 16
               }}
+
         />
       )
   }

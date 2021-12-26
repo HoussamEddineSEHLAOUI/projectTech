@@ -1,4 +1,4 @@
-import { StatusBar } from 'expo-status-bar';
+import React, { Component } from 'react';
 import { StyleSheet, Text, View ,Image ,ScrollView } from 'react-native';
 import BankComp from '../components/BankComp';
 import {Display} from '../utils';

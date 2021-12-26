@@ -1,7 +1,17 @@
+import 'react-native-gesture-handler' ;
+import * as React from 'react';
+
+
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View ,FlatList } from 'react-native';
 import Alerte from './src/components/Alerte';
 import Application from './src/components/Application';
+import Navigation from './src/navigators';
+
+
+
+
+
 
 
 
@@ -26,17 +36,20 @@ import StaticScreen from './src/screens/StaticScreen';
 
 
 
+
+
 export default function App() {
   
   return (
     <View style={styles.container}>
-      <AlerteScreen/>
+      <Navigation/>
     </View>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1
+    flex: 1 ,
+    backgroundColor: '#fff',
   },
 });
